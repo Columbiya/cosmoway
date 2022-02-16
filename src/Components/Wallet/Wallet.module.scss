@@ -1,0 +1,163 @@
+@import '../../variables.scss';
+
+.wallet {
+    margin-top: 130px;
+    margin-bottom: 90px;
+}
+
+.warningIcon {
+    font-size: 72px;
+    color: #fff;
+    width: 85px;
+    height: 85px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid #fff;
+    border-radius: 50%;
+}
+
+.warning {
+    background: linear-gradient(to top, rgba(#c4bfe3, .45), rgba(#9a94e8, .45));
+    padding: 40px 100px;
+    border-radius: 30px;
+
+    display: flex;
+    align-items: center;
+}
+
+.warningText {
+    font-size: 24px;
+    letter-spacing: 2px;
+    line-height: 36px;
+    max-width: 930px;
+
+    margin-left: 120px;
+}
+
+.statistics {
+    margin: 60px 0 200px;
+}
+
+.rewardPromotion {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reward {
+    width: 47%;
+}
+
+.rewardTitle {
+    margin-bottom: 30px;
+    font-size: 24px;
+    letter-spacing: 2px;
+
+    &.upperCase {
+        text-transform: uppercase;
+    }
+}
+
+.rewardInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: linear-gradient(to top, rgba(#c0d0f0, .5), rgba(#e0ceef, .5));
+    padding: 45px 60px;
+    border-radius: 50px;
+
+    &.promotion {
+        background: linear-gradient(to top, #dff6f2, #b7dcd3);
+    }
+
+    span {
+        font-size: 30px;
+        font-weight: 700;
+        letter-spacing: 2px;
+    }
+}
+
+.rewards {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 80px;
+}
+
+.allTimeReward {
+    width: 47%;
+}
+
+.mark {
+    color: $blueColor;
+}
+
+.rewardAmount {
+    background: linear-gradient(to top, rgba(#c4bfe3, .45), rgba(#9a94e8, .45));
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 2px;
+
+    padding: 60px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.bonuses {
+    background-color: #cdcaef;
+    padding: 60px;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.bonus {
+    display: flex;
+    justify-content: space-between;
+
+    &:not(:last-child) {
+        margin-bottom: 35px;
+    }
+
+    .mark {
+        font-size: 24px;
+        letter-spacing: 2px;
+
+        width: 195px;
+    }
+}
+
+.bonusName {
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.claimReward {
+    background: linear-gradient(to top, rgba(#edddfd, .45), rgba(#c797fa, .45));
+    border-radius: 50px;
+    padding: 65px 60px;
+    margin-top: 60px;
+}
+
+.claimText {
+    display: flex;
+}
+
+.text {
+    max-width: 920px;
+    font-size: 24px;
+    letter-spacing: 2px;
+    line-height: 36px;
+
+    margin-left: 120px;
+
+    p {
+        margin-bottom: 45px;
+    }
+}
+
+.buttons {
+    display: flex;
+}

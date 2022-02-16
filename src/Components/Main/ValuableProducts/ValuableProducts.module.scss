@@ -1,0 +1,49 @@
+@import "../../../variables.scss";
+
+.title {
+    font-size: 72px;
+    font-weight: 900;
+    letter-spacing: 5px;
+
+    max-width: 880px;
+    margin-bottom: 50px;
+}
+
+.inner {
+    background: url('../../../assets/index-page/valuable-products-image.png') left bottom no-repeat;
+
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+}
+
+.content {
+    width: 50%;
+}
+
+.subtitle {
+    font-size: 48px;
+    font-weight: 900;
+    max-width: 520px;
+    letter-spacing: 3px;
+
+    margin-bottom: 70px;
+}
+
+.mark {
+    color: $blueColor;
+    font-weight: 900;
+}
+
+.text {
+    font-size: 24px;
+    letter-spacing: 2px;
+
+    &.small {
+        font-size: 18px;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 45px;
+    }
+}

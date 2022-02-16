@@ -1,0 +1,133 @@
+.marketingPlan {
+    margin: 150px 0;
+}
+
+.title {
+    font-size: 72px;
+    text-align: center;
+    letter-spacing: 5px;
+    margin: 0 auto  110px;
+}
+
+.plans {
+    display: flex;
+    justify-content: space-between;
+}
+
+.planItem {
+    width: 24%;
+    padding: 90px 40px 70px;
+    text-align: center;
+
+    position: relative;
+
+    border-radius: 70px;
+
+    &.bronze {
+        background: linear-gradient(to top, rgba(138, 121, 90, .5), rgba(239, 208, 155, .5));
+
+        & .schemeGrade {   
+            background-color: #e8dbc3;
+        }
+
+        & .schemeGrade.plus {
+            background-color: #d3c9b6;
+        }
+    }
+
+    &.silver {
+        background: linear-gradient(to top, rgba(113, 113, 113, .5), rgba(197, 197, 197, .5));
+
+        & .schemeGrade {
+            background-color: #d6d6d6;
+        }
+
+        & .schemeGrade.plus {
+            background-color: #c4c4c4;
+        }
+    }
+
+    &.golden {
+        background: linear-gradient(to top, rgba(152, 133, 76, .5), rgba(#ffe18a, .5));
+
+        & .schemeGrade {
+            background-color: #f0e3bb;
+        }
+
+        & .schemeGrade.plus {
+            background-color: #dbd0af;
+        }
+    }
+
+    &.platinum {
+        background: linear-gradient(to top, rgba(#a0a0a0, .5), rgba(#d7d7d7, .5));
+
+        & .schemeGrade {
+            background-color: #e3e3e3;
+        }
+
+        & .schemeGrade.plus {
+            background-color: #d7d7d7;
+            width: 180px;
+        }
+    }
+
+    
+}
+
+.icon {
+    position: absolute;
+    top: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.planName {
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin-bottom: 55px;
+}
+
+.scheme {
+    position: relative; 
+
+    border: 2px solid #fff;
+    border-radius: 30px;
+    height: 140px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+
+    &:not(:last-child) {
+        margin-bottom: 40px;
+    }
+}
+
+.schemeGrade {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 15px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 2px;
+}
+
+.text {
+    font-size: 24px;
+    letter-spacing: 3px;
+
+    &:not(:last-child) {
+        margin-bottom: 15px;
+    }
+}
