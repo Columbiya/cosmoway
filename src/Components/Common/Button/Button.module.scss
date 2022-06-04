@@ -1,41 +1,101 @@
 @import '../../../variables.scss';
 
 .button {
-    background: $blueColor;
+    display: grid;
+    place-items: center;
+    width: 250px;
+    height: 70px;
+    font-family: 'Open Sans', sans-serif;
     color: #fff;
+    font-size: 18px;
+    font-weight: 500;
     text-transform: uppercase;
-    letter-spacing: 2px;
-    border-radius: 50px;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 240px;
-    padding: 25px 0;
-
-    transition: opacity .3s ease;
-
-    img {
-        margin-left: 20px;
-    }
+    box-sizing: border-box;
 }
 
-.wholeButton {
+.filled {
+    background: #20aff0;
+    border-radius: 80px;
+    transition: opacity .5s ease-in-out;
+
+    &.animated {
+        background: linear-gradient(-45deg, $startColorGradient, $endColorGradient, #80ff37);
+        background-size: 400% 400%;
+        animation: move 10s linear infinite;
+        transition: box-shadow .5s ease;
+        &:hover {
+            box-shadow: 5px 5px 55px #096db1;
+        }
+    }
+
     &:hover {
-        opacity: .7;
+        opacity: .8;
     }
 }
 
 .hollow {
-    background: transparent;
-    border: 2px solid $blueColor;
-    color: $blueColor;
+    border: 1px solid #fff;
+    position: relative;
+    z-index: 5;
+    overflow: hidden;
 
-    transition: color .3s ease, background-color .3s ease;
+    transition: border-width .5s ease-in-out;
+
+    &.black {
+        color: #000;
+        border-color: #000;
+
+        
+        transition: border-width .5s ease-in-out,
+                    color .5s ease-in-out;
+
+        &:hover {
+            color: #fff;
+        }
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -5;
+        top: 0;
+        left: 0;
+        background: linear-gradient(54deg, $startColorGradient, $endColorGradient);
+        transform: translate(-105%, 0);
+
+        transition: transform .5s ease-in-out;
+    }
+
+    &:hover::after {
+        transform: translate(0, 0);
+    }
 
     &:hover {
-        background-color: $blueColor;
-        color: #fff;
+        border-width: 0;
+    }
+}
+
+.boxShadowHover {
+    transition: box-shadow .5s ease;
+    
+    &:hover {
+        box-shadow: 5px 5px 55px #096db1;
+    }
+}
+
+@keyframes move {
+    0% {
+        background-position: 50% 50%;
+    }
+
+    50% {
+        background-position: 300% 50%;  
+    }
+
+    100% {
+        background-position: 50% 50%;
     }
 }

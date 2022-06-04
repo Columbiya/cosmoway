@@ -1,43 +1,58 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import AffiliateProgram from './AffiliateProgram/AffiliateProgram'
-import ConnectMetamask from './ConnectMetamask/ConnectMetamask'
-import Info from './Info/Info'
 import Introduction from './Introduction/Introduction'
 import css from './Main.module.scss'
 import MarketingPlan from './MarketingPlan/MarketingPlan'
-import MegaPromoProgram from './MegaPromoProgram/MegaPromoProgram'
-import Metaverse from './Metaverse/Metaverse'
-import Qualify from './Qualify/Qualify'
-import TwitterFollowers from './TwitterFolowers/TwitterFollowers'
-import ValuableProduct from './ValuableProducts/ValuableProducts'
+import News from './News/News';
+import Feedback from './Feedback/Feedback';
+import Join from './Join/Join';
+import Bonuses from './Bonuses/Bonuses'
+import Snippet from '../common/Snippet/Snippet'
+import newsStore from '../../store/newsStore'
+import Preloader from '../Preloader/Preloader'
+import Footer from '../Footer/Footer'
 
-const Main = ({ changeBackground, background }) => {
 
-    useEffect(async () => {
-        changeBackground(background)
 
-        // async function getFollowers() {
-        //     const fetchedInfo = await fetch(`${process.env.PUBLIC_URL}/main.php`).then(response => response.json())
-        //     return fetchedInfo;
-        // }
+const Main = () => {
+    const [isLoading, setLoading] = useState(true)
 
-        // const response = await getFollowers();
-        // console.log(response.followers)
+    useEffect(() => {
+        async function getNews() {
+            await newsStore.getNews()
+            setLoading(false)
+        }
 
+        getNews()
     }, [])
+
+    if (isLoading) {
+        return <Preloader />
+    }
 
     return (
         <>
             <Introduction />
-            <TwitterFollowers />
-            <ConnectMetamask />
-            <ValuableProduct />
+            <Join />
+            <AffiliateProgram />
+            <MarketingPlan />
+            <div className={css.snippetContainer}>
+                <Snippet title={'To get a referral level, you only need to have NFTs from the CosmoLand collection on your MetaMask wallet'} 
+                        secondColText={'The higher the level, the more referral rewards you can receive from your referals'}
+                        titleWidth={840}
+                        secondColTextWidth={640} />
+            </div>
+            <Bonuses />
+            {/* <ValuableProduct />
             <Metaverse />
             <Info />
-            <MarketingPlan />
             <Qualify />
-            <AffiliateProgram />
-            <MegaPromoProgram />
+            <MegaPromoProgram /> */}
+            <div className={css.newsContainer}>
+                <News />
+            </div>
+            <Feedback isStayUpdated={true} />
+            <Footer />
         </>
     )
 }

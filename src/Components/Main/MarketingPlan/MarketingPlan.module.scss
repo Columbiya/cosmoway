@@ -2,11 +2,20 @@
     margin: 150px 0;
 }
 
+.marketingPlanContainer {
+    position: relative;
+}
+
 .title {
     font-size: 72px;
     text-align: center;
-    letter-spacing: 5px;
-    margin: 0 auto  110px;
+    margin: 0 auto 50px;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 100px;
 }
 
 .plans {
@@ -16,6 +25,7 @@
 
 .planItem {
     width: 24%;
+    min-width: 300px;
     padding: 90px 40px 70px;
     text-align: center;
 
@@ -83,7 +93,7 @@
 }
 
 .planName {
-    font-size: 36px;
+    font-size: 31px;
     font-weight: 900;
     letter-spacing: 3px;
     margin-bottom: 55px;
@@ -112,13 +122,15 @@
     top: -40px;
     left: 50%;
     transform: translateX(-50%);
-    padding: 15px;
+    padding: 15px 10px;
+    min-width: 100px;
+    max-width: 190px;
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 900;
     letter-spacing: 2px;
 }
@@ -129,5 +141,92 @@
 
     &:not(:last-child) {
         margin-bottom: 15px;
+    }
+}
+
+.spring {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.springTwo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 36px;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .plans {
+        flex-direction: column;
+        align-items: center;
+
+        .planItem {
+            position: relative;
+            cursor: pointer;
+            z-index: 5;
+
+            transition: transform .3s ease-in-out;
+
+            &:nth-child(1) {
+                &:hover {
+                    transform: translateY(-80%);
+                }    
+            }
+
+            &:nth-child(2) {
+                z-index: 10;
+                transform: translateY(-70%);
+
+                &:hover {
+                    transform: translateY(-165%);
+                }
+            }
+
+            &:nth-child(3) {
+                z-index: 10;
+                transform: translateY(-140%);
+
+                &:hover {
+                    transform: translateY(-250%);
+                }
+            }
+
+            &:nth-child(4) {
+                z-index: 10;
+                transform: translateY(-210%);
+            }
+
+            &.bronze {
+                background: linear-gradient(to top, rgb(138, 121, 90), rgb(239, 208, 155));
+            }
+        
+            &.silver {
+                background: linear-gradient(to top, rgb(113, 113, 113), rgb(197, 197, 197));
+            }
+        
+            &.golden {
+                background: linear-gradient(to top, rgb(152, 133, 76), rgb(255, 225, 138));
+            }
+        
+            &.platinum {
+                background: linear-gradient(to top, rgb(160, 160, 160), rgb(215, 215, 215));
+            }
+        }
+    }
+
+    .schemeGrade {
+        font-size: 16px;
+    }
+
+    .planName {
+        font-size: 27px;
+        letter-spacing: 1px;
     }
 }

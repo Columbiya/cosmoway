@@ -1,13 +1,15 @@
 .header {
-    padding: 30px 0;
-    position: absolute;
+    padding: 15px 0;
+    position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
 
     width: 100%;
 
-    background-color: #fff;
+    background-color: #05254c;
+
+    user-select: none;
 }
 
 .headerInner {
@@ -16,16 +18,33 @@
     align-items: center;
 }
 
+.menu {
+    display: none;
+    cursor: pointer;
+    user-select: none;
+
+    transition: transform .3s ease;
+}
+
 .headerLink {
-    letter-spacing: 3px;
     font-size: 18px;
-    font-weight: 500;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
 
     &:not(:last-child) {
-        margin-right: 90px;
+        margin-right: 45px;
     }
 
     &:hover {
         text-decoration: underline;
     }
+}
+
+.open {
+    transform: rotate(90deg);
+}
+
+.imgLink { 
+    cursor: pointer;
 }
