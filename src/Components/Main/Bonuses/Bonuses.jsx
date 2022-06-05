@@ -402,7 +402,7 @@ const Bonuses = (props) => {
                                         <img className={css.topLine} src={lineOnThirdLine} />
                                         <img className={css.partnerImage} src={partnerFive} alt="partner 5" />
                                         <p>Partner 5</p>
-                                        <h3 className={css.partnerText}>Binary Bonus of <span>3,000</span> USDC received</h3>
+                                        <h3 className={css.partnerText}>Binary Bonus of <span>4,000</span> USDC received</h3>
                                     </div>
                                     <div className={css.person}>
                                         <img className={css.topLine + ' ' + css.inverted + ' ' + css.lineBottom} src={lineOnThirdLine} />
