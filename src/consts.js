@@ -1,7 +1,6 @@
 export const WALLET_PATH = '/wallet'
 export const REFERAL_TREE_PATH = '/referal-tree'
 export const TERMS_OF_USE_PATH = '/terms-of-use'
-export const MEGA_PROMO_PATH = '/mega-promo'
 export const DASHBOARD_PATH = '/dashboard'
 export const PRIVACY_POLICY_PATH = '/privacy-policy'
 export const PANCAKE_API_URL = 'https://api.pancakeswap.info/api/v2'

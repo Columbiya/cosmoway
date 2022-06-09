@@ -19,6 +19,7 @@ import News from '../Main/News/News'
 import Preloader from '../Preloader/Preloader'
 import Feedback from '../Main/Feedback/Feedback'
 import newsStore from '../../store/newsStore'
+import WalletInfo from '../common/WalletInfo/WalletInfo'
 
 const ReferalTree = () => {
     const teams = ['Left Team', 'Right Team'];
@@ -66,9 +67,9 @@ const ReferalTree = () => {
         setIsRight(!isRight)
     }
 
-    const onCopyLink = e => {
-        navigator.clipboard.writeText(link.current.innerHTML)
-        navigator.clipboard.readText().then(text => alert(`${text} copied to the clipboard`))
+    const onCopyLink = async e => {
+        await navigator.clipboard.writeText(link.current.innerHTML)
+        await alert(`link copied to the clipboard`)
     }
 
     if (isLoading) {
@@ -78,17 +79,7 @@ const ReferalTree = () => {
     return (
         <>
             <main className={css.treeMain}>
-                <header className={css.referralHeader}>
-                    <div className="container">
-                        <div className={css.header}>
-                            <BreadCrumbs crumb={'Dashboard'} />
-                            <div className={css.walletInfo}>
-                                <p><strong>You own:</strong> <span className="mark"><strong>{youOwn}</strong></span> Cosmoland NFTs</p>
-                                <p><strong>WALLET:</strong> {wallet}</p>
-                            </div>
-                        </div>
-                    </div>
-                </header>
+                <WalletInfo crumb='Referral Tree' />
 
                 <section className={css.referal}>
                     <div className="container">

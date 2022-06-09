@@ -11,6 +11,8 @@ import Snippet from '../common/Snippet/Snippet'
 import newsStore from '../../store/newsStore'
 import Preloader from '../Preloader/Preloader'
 import Footer from '../Footer/Footer'
+import Popup from '../common/Popups/Popup'
+import DirectAndBinary from './Bonuses/DirectAndBinary/DirectAndBinary'
 
 
 
@@ -43,11 +45,6 @@ const Main = () => {
                         secondColTextWidth={640} />
             </div>
             <Bonuses />
-            {/* <ValuableProduct />
-            <Metaverse />
-            <Info />
-            <Qualify />
-            <MegaPromoProgram /> */}
             <div className={css.newsContainer}>
                 <News />
             </div>

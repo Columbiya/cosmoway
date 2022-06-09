@@ -1,0 +1,19 @@
+
+.wallet {
+    margin-bottom: 25px;
+}
+
+.walletInner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.walletInfo {
+    display: flex;
+
+    p {
+        font-size: 21px;
+        margin-right: 80px;
+    }
+}

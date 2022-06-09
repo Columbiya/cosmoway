@@ -37,7 +37,7 @@ const AffiliateProgram = (props) => {
                             </div>
                             <div className={css.bonusItem}>
                                 <img src={fastStartImage} className={css.bonusImage} alt="" />
-                                <h4 className={css.bonusName}>Fast Start Bonus</h4>
+                                <h4 className={css.bonusName}>Early Birds Bonus</h4>
                             </div>
                         </div>
                     </div>

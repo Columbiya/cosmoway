@@ -1,0 +1,257 @@
+.innerBinary {
+    display: flex;
+}
+
+.table {
+    padding: 60px 60px 115px 60px;
+
+    position: relative;
+
+    background: rgba(#fff, 0.312);
+    border-radius: 5%;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.tableTitle {
+    font-size: 36px;
+  
+    margin-bottom: 100px;
+    color: transparent;
+    opacity: 0;
+    appearance: none;
+  }
+  
+
+.tableTypes {
+    width: 38%;
+}
+
+.directAndBinaryBonus {
+    background: url('../../../../assets/index-page/direct-and-binary-bg.jpg') center no-repeat;
+    background-size: cover;
+    padding: 70px 0;
+    margin-bottom: 70px;
+    color: #fff;
+}
+
+.typeItem {
+    padding: 20px 0 20px 100px;
+
+    font-size: 24px;
+
+    &.bronze {
+        background: url('../../../../assets/bronze-icon.png') left center no-repeat;
+    }
+
+    &.silver {
+        background: url('../../../../assets/silver-icon.png') left center no-repeat;
+    }
+
+    &.gold {
+        background: url('../../../../assets/gold-icon.png') left center no-repeat;
+    }
+
+    &.platinum {
+        background: url('../../../../assets/platinum-icon.png') left center no-repeat;
+    }
+
+    &:not(:last-child) {
+        margin-bottom: 80px;
+    }
+}
+
+.bonusLevels {
+    height: 55px;
+    background-color: #eae9fa85;
+
+    margin-bottom: 49px;
+    padding: 0 20px;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 30px;
+}
+
+.level {
+    font-size: 18px;
+    font-weight: 700;
+
+    &:not(:last-child) {
+        margin-right: 65px;
+    }
+}
+
+.bonusTitle {
+    font-size: 24px;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 43px;
+}
+
+.directBonus {
+    padding: 28px 10px;
+
+    border: 2px solid #fff;
+    border-radius: 30px;
+
+    position: relative;
+}
+
+.row {
+    padding: 0 20px;
+    
+    margin-bottom: 120px;
+
+    span {
+        font-size: 24px;
+        font-weight: 700;
+        font-family: 'Roboto', sans-serif;
+
+        span {
+            margin: 0 5px 0;
+        }
+
+        &:not(:last-child) {
+            margin-right: 65px;
+        }
+    }
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.tableDirectImage {
+    position: absolute;
+    left: 100px;
+    top: -45px;
+    z-index: 5;
+}
+
+.binaryBonus {
+    padding: 28px;
+
+    border: 2px solid #fff;
+    border-radius: 30px;
+}
+
+.noBackground {
+    background-color: transparent;
+}
+
+.paymentSystem {
+    font-size: 18px;
+
+    display: flex;
+    align-items: center;
+
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+
+    & img {
+        margin-right: 30px;
+    }   
+}
+
+.text {
+    width: 23%;
+
+    padding-left: 50px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-size: 18px;
+    line-height: 25px;
+    font-weight: 700;
+
+    &.center {
+        justify-content: flex-start;
+        margin-top: 60px;
+    }
+
+    p:not(:last-child) {
+        margin-bottom: 50px;
+    }
+}
+
+.binaryImage {
+    position: absolute;
+    bottom: -45px;
+    right: -75px;
+    transform: scale(-1, 1);
+}
+
+.popup {
+    background: transparent;
+    margin-bottom: 0;
+    position: relative;
+    padding: 15px 0;
+
+    .innerBinary {
+        width: 85%;
+        margin: 0 auto;
+    }
+
+    .row {
+        &:not(:last-child) {
+            margin-bottom: 87px;
+        }
+        span {
+            font-size: 20px;
+        }
+    }
+
+
+    .typeItem {
+        &:not(:last-child) {
+            margin-bottom: 42px;
+        }
+    }
+
+    .binaryBonus {
+        padding: 28px 20px;
+    }
+
+    .table {
+        position: initial;
+        background: linear-gradient(90deg, #495499, #4161ac);
+    }
+
+    .tableTitle {
+        margin-bottom: 94px;
+    }
+
+    .tableDirectImage {
+        left: -100px;
+        top: 300px;
+    }
+
+    .binaryImage {
+        transform: scale(-1) rotateZ(180deg);
+    }
+
+    .tableTitle {
+        opacity: 1;
+        appearance: auto;
+        color: #fff;
+    }
+
+    .paymentSystem {
+        bottom: 60px;
+    }
+}
+
+.popupTitle {
+    margin: 25px 0;
+}
+
+
+

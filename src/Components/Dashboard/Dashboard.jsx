@@ -9,11 +9,17 @@ import Feedback from '../Main/Feedback/Feedback'
 import cvrBirds from '../../assets/dashboard/early-birds-image.png'
 import newsStore from '../../store/newsStore'
 import Preloader from '../Preloader/Preloader'
+import Popup from '../common/Popups/Popup'
+import DirectAndBinary from '../Main/Bonuses/DirectAndBinary/DirectAndBinary'
+import OtherBonuses from '../Main/Bonuses/OtherBonuses/OtherBonuses'
+import WalletInfo from '../common/WalletInfo/WalletInfo'
 
 const Dashboard = () => {
-    const [youOwn, setYouOwn] = useState(0)
-    const [wallet, setWallet] = useState('')
     const [isLoading, setLoading] = useState(true)
+    const [directBonusOpen, setDirectBonusOpen] = useState(false)
+    const [neededForNextRank, setNeededForNextRank] = useState(false)
+    const [rewardsForRank, setRewardsForRank] = useState(false)
+    const [error, setError] = useState('')
 
     useEffect(() => {
         async function getNews() {
@@ -28,38 +34,57 @@ const Dashboard = () => {
         return <Preloader />
     }
 
+    const openDirectBonus = () => {
+        setDirectBonusOpen(true)
+    }
+
+    const openNeededForNextRank = () => {
+        setNeededForNextRank(true)
+    }
+
+    const openRewardsForRank = () => {
+        setRewardsForRank(true)
+    }
+
     return (
         <>
+            <div>
+                {directBonusOpen && <Popup bonus={DirectAndBinary} onHide={() => setDirectBonusOpen(false)} /> }
+                {neededForNextRank && <Popup bonus={() => <OtherBonuses isConditions={true} isPopup={true} />} onHide={() => setNeededForNextRank(false)} /> }
+                {rewardsForRank && <Popup bonus={() => <OtherBonuses isRankAndTeam={true} isPopup={true} />} onHide={() => setRewardsForRank(false)} /> }
+                {error && <Popup onHide={() => setError('')} isPopup={true} errorText={error} /> }
+            </div>
+            
             <main className={css.dashboardMain}>
-                <section className={css.wallet}>
-                    <div className="container">
-                        <div className={css.walletInner}>
-                            <BreadCrumbs crumb={'Dashboard'} />
-                            <div className={css.walletInfo}>
-                                <p><strong>You own:</strong> <span className="mark"><strong>{youOwn}</strong></span> Cosmoland NFTs</p>
-                                <p><strong>WALLET:</strong> {wallet}</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <WalletInfo crumb='Dashboard' />
 
                 <section className={css.dashboard}>
                     <div className="container">
                         <div className={css.characteristics}>
                             <div className={css.infoItem}>
-                                <div className={css.itemInner}>
-                                    <h2 className={css.infoItemTitle}>Current Level</h2>
+                                <div className={css.itemInner}>                                    
+                                    <div className={css.itemHeader}>
+                                        <h2 className={css.infoItemTitle}>Current Level</h2>
+                                    </div>
                                     <div className={css.infoBlock}>
                                         <img src={goldIcon} alt="" />
                                         <span>Gold</span>
+                                    </div>
+                                    <div className={css.warning + " " + css.gradient} onClick={openDirectBonus}>
+                                        i
                                     </div>
                                 </div>
                             </div>
                             <div className={css.infoItem}>
                                 <div className={css.itemInner}>
-                                    <h2 className={css.infoItemTitle}>Current Rank</h2>
+                                    <div className={css.itemHeader}>
+                                        <h2 className={css.infoItemTitle}>Current Rank</h2>
+                                    </div>
                                     <div className={css.infoBlock}>
                                         <span>Rank 1</span>
+                                    </div>
+                                    <div className={css.warning + " " + css.gradient} onClick={openNeededForNextRank}>
+                                        i
                                     </div>
                                 </div>
                             </div>
@@ -73,7 +98,7 @@ const Dashboard = () => {
                                     </div>
                                     <div className={css.btnContainer}>
                                         <Button isFilled={true} style={{ background: "#fff", color: "#000" }}>claim</Button>
-                                        <div className={css.warning}>
+                                        <div className={css.warning} onClick={openRewardsForRank}>
                                             i
                                         </div>
                                     </div>

@@ -100,6 +100,16 @@
     flex-grow: 1;
     position: relative;
 }
+
+.subtext {
+    font-size: 25px;
+
+    a {
+        color: #fff;
+        text-decoration: underline;
+    }
+}
+
 @keyframes fadeUp {
     0% {
         transform: scale(0);

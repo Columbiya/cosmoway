@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import Button from '../../common/Button/Button'
 import css from './Popup.module.scss'
 import congratsImage from '../../../assets/buy-cosmoland/congrats-image.png'
@@ -9,14 +9,17 @@ import { Field, Form } from 'react-final-form';
 import { axios } from '../../../http/http'
 import Preloader from './../../Preloader/Preloader';
 
-const Popup = ({ errorText, onHide, amount, isSubscribe }) => {
+const Popup = ({ errorText, onHide, amount, isSubscribe, bonus: Bonus }) => {
     const [isLoading, setLoading] = useState(false)
+    const popup = useRef(null)
+    const bonusStyles = Bonus ? css.bonus: null
+    const errorStyles = errorText ? css.error: null
 
     useEffect(() => {
         document.body.style.overflowY = 'hidden';
 
         return () => {
-            document.body.style.overflowY = 'scroll';
+            document.body.style.overflowY = 'auto';
         }
     }, [])
 
@@ -34,18 +37,16 @@ const Popup = ({ errorText, onHide, amount, isSubscribe }) => {
 
     return (
         <>
-            <div className={css.placeholder} onClick={onHide}></div>
-            <div className={css.popup}>
+            <div className={css.placeholder} onClick={onHide}>
+            </div>
+            <div className={css.popup + ' ' + bonusStyles + ' ' + errorStyles} ref={popup}>
                 {errorText && 
                     <>
                         <Warning errorText={errorText} />
-                        <div className={css.buttonContainer}>
-                            <Button isColorBlack={true} onClick={onHide}>ok</Button>
-                        </div>
                     </>
                 }
 
-                {!errorText && !isSubscribe && 
+                {!errorText && !isSubscribe && !Bonus &&
                     <div className={css.congratsContainer}>
                         <div>
                             <img src={congratsImage} alt="" />
@@ -57,9 +58,9 @@ const Popup = ({ errorText, onHide, amount, isSubscribe }) => {
                             <Button isColorBlack={true} onClick={onHide}>ok</Button>
                         </div>
                     </div>
-                    
-
                 }
+
+                {Bonus && <Bonus />}
 
                 {isSubscribe &&
                     <Form onSubmit={onDevSubmit} render={({ handleSubmit, form, submitting }) => (
@@ -135,7 +136,7 @@ const Popup = ({ errorText, onHide, amount, isSubscribe }) => {
                     </Form>
                 }
 
-                </div>
+            </div>
         </>
 
     )

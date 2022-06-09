@@ -5,11 +5,9 @@ import hiderForDark from '../../../../assets/hider-for-dark-images.png'
 import hiderForLight from '../../../../assets/hider-for-light-images.png'
 import { Link, useNavigate } from 'react-router-dom';
 import { IMAGES_API_URL } from '../../../../consts'
-import { scrollTop } from '../../../../scrollTop'
 
 
 const New = ({ img, createdAt, subtitle, title, author, hider, id, isSingleNew, noAos }) => {
-    const navigate = useNavigate()
     const date = new Date(createdAt.split('T')[0])
     const day = date.getDate() < 10 ? `0${date.getDate()}`: date.getDate()
     const month = date.getMonth() + 1 < 10 ? `0${date.getMonth() + 1}`: date.getMonth() + 1
@@ -23,13 +21,9 @@ const New = ({ img, createdAt, subtitle, title, author, hider, id, isSingleNew, 
     const animation = random % 2 == 0 ? 'zoom-in': 'fade-right'
 
 
-    const navigateAndScroll = () => {
-        scrollTop(() => navigate('/news/' + id))
-    }
-
     return (
         <div className={css.new + " " + singlePageClass} data-aos={noAos ? null: animation}>
-            <header className={css.newHeader} onClick={navigateAndScroll}>
+            <a className={css.newHeader} target="_blank" href={`https://metacosmo.space/news/${id}`}>
                 <div className={css.image}>
                     <img src={`${IMAGES_API_URL}/${img}`} className={css.articleImage} />
                     <img className={css.hider} src={hider === 'light' ? hiderForLight: hiderForDark} />
@@ -51,7 +45,7 @@ const New = ({ img, createdAt, subtitle, title, author, hider, id, isSingleNew, 
                         {nonColoredSubtitle}
                     </div>
                 </div>
-            </header>
+            </a>
             {!isSingleNew && 
                 <footer className={css.newFooter}>
                     <h2 className={css.title}>{title}</h2>

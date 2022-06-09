@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import css from './Header.module.scss'
 import logo from '../../assets/logo.png'
 import menu from '../../assets/menu.png'
 import { DASHBOARD_PATH, REFERAL_TREE_PATH, WALLET_PATH } from '../../consts'
 import { scrollTop } from '../../scrollTop'
+import { observer } from 'mobx-react-lite';
+import metamaskStore from '../../store/metamaskStore'
+import Button from '../common/Button/Button'
 
 const Header = (props) => {
     let [open, setOpen] = useState(false)
     const openClasses = open ? `${css.open}`: null
     const linksClasses = open ? `${css.open}`: null
     const navigate = useNavigate()
+    const connected = metamaskStore.isConnected
+    const chainMatic = metamaskStore.isChainMatic && !metamaskStore.isChainBSC
+
+    console.log(connected, 'connect', chainMatic, 'isChainMatic')
 
     const onNavClick = (path) => {
         scrollTop(() => navigate(path))
@@ -26,10 +33,16 @@ const Header = (props) => {
                     </div>
                     <img src={menu} className={css.menu + ' ' + openClasses} onClick={() => setOpen(!open)} alt="menu" />
                     <div className={css.headerLinks + ' ' + linksClasses}>
-                        <a className={css.headerLink} onClick={() => onNavClick(DASHBOARD_PATH)}>Dashboard</a>
-                        <a className={css.headerLink} onClick={() => onNavClick(REFERAL_TREE_PATH)}>Referal Tree</a>
-                        <a className={css.headerLink} onClick={() => onNavClick(WALLET_PATH)}>Wallet</a>
-                        <a className={css.headerLink} onClick={() => onNavClick(DASHBOARD_PATH)}>Buy Cosmoland</a>
+                        {connected && chainMatic ?
+                        <>
+                            <a className={css.headerLink} onClick={() => onNavClick(DASHBOARD_PATH)}>Dashboard</a>
+                            <a className={css.headerLink} onClick={() => onNavClick(REFERAL_TREE_PATH)}>Referal Tree</a>
+                            <a className={css.headerLink} onClick={() => onNavClick(WALLET_PATH)}>Wallet</a>
+                            <a className={css.headerLink} onClick={() => onNavClick(DASHBOARD_PATH)}>Buy Cosmoland</a>
+                        </>:
+                        <Button isFilled={true} onClick={() => metamaskStore.connect_to_metamask()}>connect metamask</Button>
+                        }
+                        
                     </div>
                 </div>
             </div>
@@ -37,4 +50,4 @@ const Header = (props) => {
     )
 }
 
-export default Header
+export default observer(Header)

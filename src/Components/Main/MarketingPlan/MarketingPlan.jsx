@@ -1,9 +1,9 @@
 import React from 'react'
 import css from './MarketingPlan.module.scss'
-import bronzeIcon from '../../../assets/bronze-icon.png'
-import silverIcon from '../../../assets/silver-icon.png'
-import goldenIcon from '../../../assets/gold-icon.png'
-import platinumIcon from '../../../assets/platinum-icon.png'
+import bronzeIcon from '../../../assets/bronze-icon-big.png'
+import silverIcon from '../../../assets/silver-icon-big.png'
+import goldenIcon from '../../../assets/gold-icon-big.png'
+import platinumIcon from '../../../assets/platinum-icon-big.png'
 import spring1 from '../../../assets/index-page/spring-plan-1.png'
 import spring2 from '../../../assets/index-page/spring-plan-2.png'
 

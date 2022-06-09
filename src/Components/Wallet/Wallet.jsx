@@ -7,6 +7,8 @@ import Preloader from './../Preloader/Preloader';
 import News from '../Main/News/News'
 import Feedback from './../Main/Feedback/Feedback';
 import Footer from '../Footer/Footer'
+import WalletInfo from './../common/WalletInfo/WalletInfo';
+import WithRedirect from '../hoc/WithRedirect'
 
 const Wallet = (props) => {
     const [youOwn, setYouOwn] = useState(0)
@@ -29,17 +31,7 @@ const Wallet = (props) => {
     return (
         <>
             <main className={css.walletMain}>
-                <section className={css.wallet}>
-                    <div className="container">
-                        <div className={css.walletInner}>
-                            <BreadCrumbs crumb={'Wallet'} />
-                            <div className={css.walletInfo}>
-                                <p><strong>You own:</strong> <span className="mark"><strong>{youOwn}</strong></span> Cosmoland NFTs</p>
-                                <p><strong>WALLET:</strong> {wallet}</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+                <WalletInfo crumb='Wallet' />
 
                 <section className={css.aboutWallet}>
                     <div className="container">
