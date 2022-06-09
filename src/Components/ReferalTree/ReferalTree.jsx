@@ -69,7 +69,7 @@ const ReferalTree = () => {
 
     const onCopyLink = async e => {
         await navigator.clipboard.writeText(link.current.innerHTML)
-        await alert(`link copied to the clipboard`)
+        alert(`link copied to the clipboard`)
     }
 
     if (isLoading) {
