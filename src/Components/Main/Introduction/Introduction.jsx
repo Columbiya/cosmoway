@@ -27,8 +27,8 @@ const Introduction = (props) => {
                         <span className={css.subtext}>You can <a href="#">download metamask here</a></span>
                     </>:
                     <>
-                        <div className={css.subtext + ' ' + css.wallet}>Wallet:</div>
-                        <div className={css.subtext + ' ' + css.wallet}>{connectedWallet}</div>
+                        <div className={css.text}>Wallet:</div>
+                        <div className={css.text}>{connectedWallet}</div>
                     </>
                     }
 

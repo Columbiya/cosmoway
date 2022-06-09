@@ -102,12 +102,17 @@
 }
 
 .subtext {
+    margin-top: 25px;
     font-size: 25px;
 
     a {
         color: #fff;
         text-decoration: underline;
     }
+}
+
+.text {
+    font-size: 25px;
 }
 
 @keyframes fadeUp {
