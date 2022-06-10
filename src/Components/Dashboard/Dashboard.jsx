@@ -13,6 +13,9 @@ import Popup from '../common/Popups/Popup'
 import DirectAndBinary from '../Main/Bonuses/DirectAndBinary/DirectAndBinary'
 import OtherBonuses from '../Main/Bonuses/OtherBonuses/OtherBonuses'
 import WalletInfo from '../common/WalletInfo/WalletInfo'
+import { scrollTop } from './../../scrollTop';
+import { useNavigate } from 'react-router-dom';
+import { WALLET_PATH } from './../../consts';
 
 const Dashboard = () => {
     const [isLoading, setLoading] = useState(true)
@@ -20,6 +23,7 @@ const Dashboard = () => {
     const [neededForNextRank, setNeededForNextRank] = useState(false)
     const [rewardsForRank, setRewardsForRank] = useState(false)
     const [error, setError] = useState('')
+    const navigate = useNavigate()
 
     useEffect(() => {
         async function getNews() {
@@ -43,7 +47,7 @@ const Dashboard = () => {
     }
 
     const openWarning = () => {
-        setError(`Accurals occur once a week (from Tuesday to Wednesday at 24:00 UTC), after
+        setError(`Accruals occur once a week (from Tuesday to Wednesday at 24:00 UTC), after
                 which you can claim your reward at any time`)
     }
 
@@ -98,7 +102,8 @@ const Dashboard = () => {
                                         </div>
                                     </div>
                                     <div className={css.btnContainer}>
-                                        <Button isFilled={true} style={{ background: "#fff", color: "#000" }}>claim</Button>
+                                        <Button isFilled={true} style={{ background: "#fff", color: "#000" }}
+                                                onClick={() => scrollTop(() => navigate(WALLET_PATH))}>claim</Button>
                                         <div className={css.warning} onClick={openWarning}>
                                             i
                                         </div>
