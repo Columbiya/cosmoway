@@ -42,15 +42,16 @@ const Dashboard = () => {
         setNeededForNextRank(true)
     }
 
-    const openRewardsForRank = () => {
-        setRewardsForRank(true)
+    const openWarning = () => {
+        setError(`Accurals occur once a week (from Tuesday to Wednesday at 24:00 UTC), after
+                which you can claim your reward at any time`)
     }
 
     return (
         <>
             <div>
                 {directBonusOpen && <Popup bonus={DirectAndBinary} onHide={() => setDirectBonusOpen(false)} /> }
-                {neededForNextRank && <Popup bonus={() => <OtherBonuses isConditions={true} isPopup={true} />} onHide={() => setNeededForNextRank(false)} /> }
+                {neededForNextRank && <Popup isNextRank={true} bonus={() => <OtherBonuses isConditions={true} isPopup={true} />} onHide={() => setNeededForNextRank(false)} /> }
                 {rewardsForRank && <Popup bonus={() => <OtherBonuses isRankAndTeam={true} isPopup={true} />} onHide={() => setRewardsForRank(false)} /> }
                 {error && <Popup onHide={() => setError('')} isPopup={true} errorText={error} /> }
             </div>
@@ -61,7 +62,7 @@ const Dashboard = () => {
                 <section className={css.dashboard}>
                     <div className="container">
                         <div className={css.characteristics}>
-                            <div className={css.infoItem}>
+                            <div className={css.infoItem} data-aos="fade-up">
                                 <div className={css.itemInner}>                                    
                                     <div className={css.itemHeader}>
                                         <h2 className={css.infoItemTitle}>Current Level</h2>
@@ -75,7 +76,7 @@ const Dashboard = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className={css.infoItem}>
+                            <div className={css.infoItem} data-aos="zoom-in">
                                 <div className={css.itemInner}>
                                     <div className={css.itemHeader}>
                                         <h2 className={css.infoItemTitle}>Current Rank</h2>
@@ -88,7 +89,7 @@ const Dashboard = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className={css.infoItem}>
+                            <div className={css.infoItem} data-aos="fade-down">
                                 <div className={css.itemInner + " " + css.reward}>
                                     <div className={css.rewardLeft}>
                                         <h2 className={css.infoItemTitle}>My reward (USDC)</h2>
@@ -98,13 +99,13 @@ const Dashboard = () => {
                                     </div>
                                     <div className={css.btnContainer}>
                                         <Button isFilled={true} style={{ background: "#fff", color: "#000" }}>claim</Button>
-                                        <div className={css.warning} onClick={openRewardsForRank}>
+                                        <div className={css.warning} onClick={openWarning}>
                                             i
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div className={css.infoItem}>
+                            <div className={css.infoItem} data-aos="fade-up">
                                 <h2 className={css.infoItemTitle}>All time reward (USDC)</h2>
                                 <div className={css.itemInner + " " + css.reward + " " + css.table}>
                                     <div className={css.rewardLeft}>
@@ -124,7 +125,7 @@ const Dashboard = () => {
                                     <span>5,000</span>
                                 </div>
                             </div>
-                            <div className={css.infoItem}>
+                            <div className={css.infoItem} data-aos="zoom-out">
                                 <h2 className={css.infoItemTitle}>Next reward (USDC)</h2>
                                 <div className={css.itemInner + " " + css.reward + " " + css.table}>
                                     <div className={css.rewardLeft}>
@@ -149,7 +150,7 @@ const Dashboard = () => {
 
                 </section>
 
-                <section className={css.earlyBirds}>
+                <section className={css.earlyBirds} data-aos="fade-up">
                     <div className="container">
                         <div className={css.birdsInner}>
                             <img src={cvrBirds} className={css.birdsImage} alt="" />

@@ -83,10 +83,10 @@ const ReferalTree = () => {
 
                 <section className={css.referal}>
                     <div className="container">
-                        <h1 className={css.title}>Distribution of referrals</h1>
+                        <h1 className={css.title} data-aos="zoom-out">Distribution of referrals</h1>
                         <div className={css.buttons}>
                             <div className={css.buttonsLeft}>
-                                <div className={css.dropDown} onClick={onDropDownClick}>
+                                <div className={css.dropDown} onClick={onDropDownClick} data-aos="fade-up">
                                     <span className={css.selected} ref={ref}>{active}</span>
                                     <div className={css.dropDownContent + ' ' + hiddenClass}>
                                         {teams.filter((team) => team != active).map(team =>
@@ -97,19 +97,19 @@ const ReferalTree = () => {
 
                                     </div>
                                 </div>
-                                <div className={css.copyLink} onClick={onCopyLink}>
+                                <div className={css.copyLink} onClick={onCopyLink} data-aos="fade-down">
                                     <a className={css.referralLink} ref={link}>https://cosmoway.net/hfuuij8du9L/</a>
                                     <img src={copyImg} className={css.copyImg} alt="copy" />
                                 </div>
                             </div>
-                            <div className={css.buttonsNav}>
+                            <div className={css.buttonsNav} data-aos="zoom-out">
                                 <Button style={{ padding: "23px 50px", width: "auto" }} isFilled={true}>to my account</Button>
                                 <Button style={{ padding: "23px 50px", width: "auto" }} isFilled={true}>one level up</Button>
                                 <Button style={{ padding: "23px 50px", width: "auto" }} isFilled={true}>refresh</Button>
                             </div>
                         </div>
                         <div className={css.info}>
-                            <div className={css.team}>
+                            <div className={css.team} data-aos="fade-up">
                                 <header className={css.teamHeader}>
                                     <h2 className={css.teamTitle}>Left Team</h2>
                                     <div className={css.teamKind}>
@@ -134,7 +134,7 @@ const ReferalTree = () => {
                                 </footer>
                             </div>
 
-                            <div className={css.team + ' ' + css.account}>
+                            <div className={css.team + ' ' + css.account} data-aos="fade-down">
                                 <header className={css.teamHeader + ' ' + css.yourAccount}>
                                     <h2 className={css.teamTitle}>Your Account</h2>
                                 </header>
@@ -163,7 +163,7 @@ const ReferalTree = () => {
                                     </div>
                                 </footer>
                             </div>
-                            <div className={css.team}>
+                            <div className={css.team} data-aos="fade-left">
                                 <header className={css.teamHeader}>
                                     <h2 className={css.teamTitle}>Right Team</h2>
                                     <div className={css.teamKind}>

@@ -11,10 +11,6 @@ import Snippet from '../common/Snippet/Snippet'
 import newsStore from '../../store/newsStore'
 import Preloader from '../Preloader/Preloader'
 import Footer from '../Footer/Footer'
-import Popup from '../common/Popups/Popup'
-import DirectAndBinary from './Bonuses/DirectAndBinary/DirectAndBinary'
-
-
 
 const Main = () => {
     const [isLoading, setLoading] = useState(true)
@@ -38,7 +34,7 @@ const Main = () => {
             <Join />
             <AffiliateProgram />
             <MarketingPlan />
-            <div className={css.snippetContainer}>
+            <div className={css.snippetContainer} data-aos="zoom-out">
                 <Snippet title={'To get a referral level, you only need to have NFTs from the CosmoLand collection on your MetaMask wallet'} 
                         secondColText={'The higher the level, the more referral rewards you can receive from your referals'}
                         titleWidth={840}

@@ -12,10 +12,10 @@ const MarketingPlan = (props) => {
         <div className={css.marketingPlanContainer}>
             <div className="container">
                 <div className={css.marketingPlan}>
-                    <h2 className={css.title}><span className='mark'>Marketing</span> Plan</h2>
-                    <h3 className={css.subtitle}>when Collecting NFTs</h3>
+                    <h2 className={css.title} data-aos="fade-up"><span className='mark'>Marketing</span> Plan</h2>
+                    <h3 className={css.subtitle} data-aos="fade-down">when Collecting NFTs</h3>
                     <div className={css.plans}>
-                        <div className={css.planItem + ' ' + css.bronze}>
+                        <div className={css.planItem + ' ' + css.bronze} data-aos="fade-up">
                             <img src={bronzeIcon} className={css.icon} alt="" />
                             <h3 className={css.planName}>Bronze Level</h3>
                             <div className={css.scheme}>
@@ -28,7 +28,7 @@ const MarketingPlan = (props) => {
                             </div>
                         </div>
 
-                        <div className={css.planItem + ' ' + css.silver}>
+                        <div className={css.planItem + ' ' + css.silver} data-aos="zoom-out">
                             <img src={silverIcon} className={css.icon} alt="" />
                             <h3 className={css.planName}>Silver Level</h3>
                             <div className={css.scheme}>
@@ -41,7 +41,7 @@ const MarketingPlan = (props) => {
                             </div>
                         </div>
 
-                        <div className={css.planItem + ' ' + css.golden}>
+                        <div className={css.planItem + ' ' + css.golden} data-aos="zoom-in">
                             <img src={goldenIcon} className={css.icon} alt="" />
                             <h3 className={css.planName}>Golden Level</h3>
                             <div className={css.scheme}>
@@ -54,7 +54,7 @@ const MarketingPlan = (props) => {
                             </div>
                         </div>
 
-                        <div className={css.planItem + ' ' + css.platinum}>
+                        <div className={css.planItem + ' ' + css.platinum} data-aos="fade-down">
                             <img src={platinumIcon} className={css.icon} alt="" />
                             <h3 className={css.planName}>Platinum Level</h3>
                             <div className={css.scheme}>

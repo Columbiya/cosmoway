@@ -8,7 +8,6 @@ import News from '../Main/News/News'
 import Feedback from './../Main/Feedback/Feedback';
 import Footer from '../Footer/Footer'
 import WalletInfo from './../common/WalletInfo/WalletInfo';
-import WithRedirect from '../hoc/WithRedirect'
 
 const Wallet = (props) => {
     const [youOwn, setYouOwn] = useState(0)
@@ -36,8 +35,8 @@ const Wallet = (props) => {
                 <section className={css.aboutWallet}>
                     <div className="container">
                         <div className={css.aboutInner}>
-                            <div className={css.walletItem}>
-                                <header className={css.itemHeader}>
+                            <div className={css.walletItem} data-aos="fade-up">
+                                <header className={css.itemHeader} data-aos="zoom-out">
                                     <h3 className={css.itemTitle}>Vouchers</h3>
                                     <Button isFilled={true}>claim</Button>
                                 </header>
@@ -68,8 +67,8 @@ const Wallet = (props) => {
                                     <span>1,000,123,00</span>
                                 </footer>
                             </div>
-                            <div className={css.walletItem + " " + css.statistics}>
-                                <header className={css.itemHeader}>
+                            <div className={css.walletItem + " " + css.statistics} data-aos="fade-down">
+                                <header className={css.itemHeader} data-aos="zoom-out">
                                     <h3 className={css.itemTitle}>Transactions</h3>
                                     <Button isFilled={true} style={{opacity: '0', cursor: 'initial'}}>claim</Button>
                                 </header>
@@ -100,8 +99,8 @@ const Wallet = (props) => {
                                     <span>1,000,123,00</span>
                                 </footer>
                             </div>
-                            <div className={css.walletItem + " " + css.statistics}>
-                                <header className={css.itemHeader}>
+                            <div className={css.walletItem + " " + css.statistics} data-aos="fade-up">
+                                <header className={css.itemHeader} data-aos="zoom-out">
                                     <h3 className={css.itemTitle}>Cashed vouchers</h3>
                                     <Button isFilled={true} style={{opacity: '0', cursor: 'initial'}}>claim</Button>
                                 </header>

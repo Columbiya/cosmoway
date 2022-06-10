@@ -13,11 +13,11 @@ const DirectAndBinary = ({ withText }) => {
                 <h2 className={css.popupTitle}>Needed for the next level: <span className="mark">1,234,456</span> Cosmoland NFTs</h2>
             }
             
-            <div className={css.directAndBinaryBonus + " " + popupClasses}>
+            <div className={css.directAndBinaryBonus + " " + popupClasses} data-aos="fade-up">
                 <div className="container">
                     <div className={css.innerBinary}>
                         <div className={css.tableContainer}>
-                            <div className={css.table}>
+                            <div className={css.table} data-aos="zoom-in">
                                 <div className={css.tableTypes}>
                                     <h2 className={css.tableTitle}><span className={css.mark}>Direct</span> Bonus and <span className={css.mark}>Binary</span> Bonus</h2>
                                     <div className={css.typeItem + ' ' + css.bronze}>
@@ -87,7 +87,7 @@ const DirectAndBinary = ({ withText }) => {
                         </div>
 
                         {withText && 
-                            <div className={css.text}>
+                            <div className={css.text} data-aos="fade-up">
                                 <p>
                                     To participate in the affiliate program, you must qualify
                                     by purchasing the NFT from <span className={css.mark}>CosmoLand</span> collection.

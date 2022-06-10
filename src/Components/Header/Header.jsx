@@ -1,52 +1,56 @@
-import React, { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import React from 'react'
 import css from './Header.module.scss'
+import { useNavigate } from 'react-router-dom'
 import logo from '../../assets/logo.png'
-import menu from '../../assets/menu.png'
-import { DASHBOARD_PATH, REFERAL_TREE_PATH, WALLET_PATH } from '../../consts'
 import { scrollTop } from '../../scrollTop'
-import { observer } from 'mobx-react-lite';
+import Button from './../common/Button/Button';
+import { ABOUT_COSMOLANDS_PATH, DASHBOARD_PATH, REFERAL_TREE_PATH } from '../../consts'
 import metamaskStore from '../../store/metamaskStore'
-import Button from '../common/Button/Button'
+import { observer } from 'mobx-react-lite';
+import { WALLET_PATH, BUY_COSMOLAND_PATH } from './../../consts';
 
 const Header = (props) => {
-    let [open, setOpen] = useState(false)
-    const openClasses = open ? `${css.open}`: null
-    const linksClasses = open ? `${css.open}`: null
     const navigate = useNavigate()
-    const connected = metamaskStore.isConnected
-    const chainMatic = metamaskStore.isChainMatic && !metamaskStore.isChainBSC
-
-    console.log(connected, 'connect', chainMatic, 'isChainMatic')
-
-    const onNavClick = (path) => {
-        scrollTop(() => navigate(path))
-        setOpen(false)
-    }
+    const isConnected = metamaskStore.isConnected && metamaskStore.isChainMatic
 
     return (
         <header className={css.header}>
-            <div className="container">
-                <div className={css.headerInner}>
+            <div className={`container ${css.fullHeight}`}>
+                <div className={css.headerContainer}>
                     <div className={css.logo}>
-                        <a className={css.imgLink}><img src={logo} alt="logo" onClick={() => onNavClick('/')} /></a>
+                        <img src={logo} onClick={() => scrollTop(() => navigate('/'))} className={css.logoImage} />
                     </div>
-                    <img src={menu} className={css.menu + ' ' + openClasses} onClick={() => setOpen(!open)} alt="menu" />
-                    <div className={css.headerLinks + ' ' + linksClasses}>
-                        {connected && chainMatic ?
+                    <nav className={css.nav}>
+                        {isConnected ? 
                         <>
-                            <a className={css.headerLink} onClick={() => onNavClick(DASHBOARD_PATH)}>Dashboard</a>
-                            <a className={css.headerLink} onClick={() => onNavClick(REFERAL_TREE_PATH)}>Referal Tree</a>
-                            <a className={css.headerLink} onClick={() => onNavClick(WALLET_PATH)}>Wallet</a>
-                            <a className={css.headerLink} onClick={() => onNavClick(DASHBOARD_PATH)}>Buy Cosmoland</a>
+                            <div className={css.navLink}>
+                                <span className={css.groupName} onClick={() => scrollTop(() => navigate(DASHBOARD_PATH))}>Dashboard</span>
+                            </div>
+                            <div className={css.navLink}>
+                                <span className={css.groupName} onClick={() => scrollTop(() => navigate(BUY_COSMOLAND_PATH))}>Buy Cosmoland</span>
+                                <ul className={css.dropdown}>
+                                    <li>
+                                        <span className={css.listText}>
+                                            <strong onClick={() => scrollTop(() => navigate(ABOUT_COSMOLANDS_PATH))}>
+                                                About CosmoLands
+                                            </strong>
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className={css.navLink}>
+                                <span className={css.groupName} onClick={() => scrollTop(() => navigate(REFERAL_TREE_PATH))}>Referral Tree</span>
+                            </div>
+                            <div className={css.navLink} onClick={() => scrollTop(() => navigate(WALLET_PATH))}>
+                                <span className={css.groupName}>Wallet</span>
+                            </div>
                         </>:
-                        <Button isFilled={true} onClick={() => metamaskStore.connect_to_metamask()}>connect metamask</Button>
+                        <Button isFilled={true} onClick={metamaskStore.connect_to_metamask}>connect metamask</Button>
                         }
-                        
-                    </div>
+                    </nav>
                 </div>
             </div>
-        </header>
+        </header>   
     )
 }
 

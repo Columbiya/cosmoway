@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import css from '../Bonuses.module.scss'
 import you from '../../../../assets/index-page/you.png'
 import partnerOne from '../../../../assets/index-page/partner-1.png'
@@ -15,12 +15,14 @@ import rankBonusImage from '../../../../assets/index-page/rank-bonus.png'
 const OtherBonuses = ({ isRankAndTeam, isConditions, isTeamsBonus, isPopup }) => {
     const popupClasses = isPopup ? css.popup : null
 
+    const [nextRank, setNextRank] = useState(isRankAndTeam)
+
     return (
         <>
-            {isRankAndTeam &&
+            {nextRank &&
                 <>
-                    {isPopup && <h2 className={css.popupTitle + ' ' + css.conditionsTitle}>Needed for the next rank <span>Rewards for reaching the Rank</span></h2>}
-                    <div className={css.rankAndTeamBonus + ' ' + css.rank + ' ' + popupClasses}>
+                    {isPopup && <h2 className={css.popupTitle + ' ' + css.conditionsTitle} data-aos="fade-up"><span onClick={() => setNextRank(false)}>Needed for the next rank</span> <strong>Rewards for reaching the Rank</strong></h2>}
+                    <div className={css.rankAndTeamBonus + ' ' + css.rank + ' ' + popupClasses} data-aos="fade-up">
                         <div className="container">
                             <div className={css.rankAndTeamTable}>
                                 <div className={css.tableContent}>
@@ -145,7 +147,7 @@ const OtherBonuses = ({ isRankAndTeam, isConditions, isTeamsBonus, isPopup }) =>
                                     <img src={rankBonusImage} className={css.rankBonusImage} alt='' />
                                     <img src={teamBonusImage} alt='' className={css.teamBonusImage} />
                                     {!isPopup &&
-                                        <div className={css.rankTeamTableAdditional}>
+                                        <div className={css.rankTeamTableAdditional} data-aos="fade-up">
                                             The Team Bonus is awarded as a percentage of the
                                             Binary Bonuses received by the users registered with
                                             the platform partner's referral link. The number of active
@@ -161,14 +163,14 @@ const OtherBonuses = ({ isRankAndTeam, isConditions, isTeamsBonus, isPopup }) =>
 
             }
 
-            {isConditions &&
+            {!nextRank &&
                 <>
-                    {isPopup && <h2 className={css.popupTitle + ' ' + css.conditionsTitle}><span>Needed for the next rank</span> Rewards for reaching the Rank</h2>}
+                    {isPopup && <h2 className={css.popupTitle + ' ' + css.conditionsTitle} data-aos="fade-up"><strong>Needed for the next rank</strong> <span onClick={() => setNextRank(true)}>Rewards for reaching the Rank</span></h2>}
                     <div className={css.rankAndTeamBonus + ' ' + css.conditionsSection + ' ' + popupClasses}>
                         <div className="container">
                             <div className={css.rankAndTeamBonusInner}>
                                 <div className={css.tableContainer}>
-                                    <div className={css.rankAndTeamTable + ' ' + css.conditions}>
+                                    <div className={css.rankAndTeamTable + ' ' + css.conditions} data-aos="zoom-out">
                                         <div className={css.tableContent}>
                                             <div className={css.tableRank}>
                                                 <h3 className={css.columnTitle}>Rank</h3>
@@ -227,7 +229,7 @@ const OtherBonuses = ({ isRankAndTeam, isConditions, isTeamsBonus, isPopup }) =>
                                     </div>
                                 </div>
 
-                                <div className={css.text + " " + css.center}>
+                                <div className={css.text + " " + css.center} data-aos="fade-up">
                                     <p>
                                         To reach new ranks, you should maintain the proportion for the binary legs.
                                     </p>
@@ -249,9 +251,9 @@ const OtherBonuses = ({ isRankAndTeam, isConditions, isTeamsBonus, isPopup }) =>
 
             {isTeamsBonus &&
             <>
-                <div className={css.teamBonusSection + ' ' + css.rankAndTeamBonus + ' ' + popupClasses}>
+                <div className={css.teamBonusSection + ' ' + css.rankAndTeamBonus + ' ' + popupClasses} data-aos="fade-up">
                     <div className="container">
-                        <div className={css.teamBonusInner + ' ' + css.tableContainer}>
+                        <div className={css.teamBonusInner + ' ' + css.tableContainer} data-aos="fade-up">
                             <div className={css.teamBonusExample}>
                                 <div className={css.exampleUpper + ' ' + css.exampleLine}>
                                     <div className={css.person}>
