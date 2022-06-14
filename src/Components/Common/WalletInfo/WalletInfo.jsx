@@ -7,7 +7,7 @@ import { observer } from 'mobx-react-lite';
 const WalletInfo = ({ crumb }) => {
     const youOwn = Number(metamaskStore.currentOwn)
     const wallet = metamaskStore.connectedWallet
-
+    
     return (
         <>
             <section className={css.wallet} data-aos="fade-up">
@@ -16,7 +16,7 @@ const WalletInfo = ({ crumb }) => {
                         <BreadCrumbs crumb={crumb} />
                         <div className={css.walletInfo}>
                             <p><strong>You own:</strong> <span className="mark"><strong>{youOwn}</strong></span> Cosmoland NFTs</p>
-                            <p><strong>WALLET:</strong> {wallet}</p>
+                            <p><strong>WALLET:</strong> <span>{wallet}</span></p>
                         </div>
                     </div>
                 </div>

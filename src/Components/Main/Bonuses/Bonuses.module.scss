@@ -575,16 +575,29 @@ $titlesWithNoLinesMargin: 130px;
 .popupTitle {
     margin: 25px 0;
 
+    display: flex;
+
     &.conditionsTitle {
         font-weight: normal;
-        
+
         strong {
-            font-weight: 700;
             text-decoration: underline;
         }
 
         span {
+            display: block;
+            font-weight: 700;
+            margin: 0 15px;
             cursor: pointer;
+            opacity: .5;
+            transition: opacity .1s ease;
+
+            position: relative;
+
+            &:hover {
+                opacity: 1;
+                text-decoration: underline;
+            }
         }
     }
 }

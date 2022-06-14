@@ -21,7 +21,13 @@ const Introduction = (props) => {
                     {!connected || !isChainMatic ?
                     <>
                         <div className={css.btns}>
-                            <Button data-aos="zoom-in" isFilled={true}>connect metamask</Button>
+                            {!connected ? 
+                                <Button data-aos="zoom-in" isFilled={true} 
+                                        onClick={() => metamaskStore.connect_to_metamask()}>connect metamask</Button>
+                                :
+                                <Button data-aos="zoom-in" isFilled={true}
+                                        onClick={() => metamaskStore.switchChain()}>Switch chain</Button>
+                            }
                             <span>Connect for login/register</span>
                         </div>
                         <span className={css.subtext}>You can <a href="#">download metamask here</a></span>

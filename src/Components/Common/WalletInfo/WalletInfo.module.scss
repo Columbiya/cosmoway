@@ -17,3 +17,41 @@
         margin-right: 80px;
     }
 }
+
+@media screen and (max-width: 1440px) {
+    .walletInner {
+        display: block;
+    }
+
+    .walletInfo {
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .walletInfo {
+        display: block;
+
+        p {
+            margin-right: 0;
+            &:not(:first-child) {
+                margin-top: 15px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .walletInfo {
+        p {
+            font-size: 18px;
+            
+            &:last-child {
+                span {
+                    display: block;
+                    overflow-x: scroll;
+                }
+            }
+        }
+    }
+}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import css from './Header.module.scss'
 import { useNavigate } from 'react-router-dom'
 import logo from '../../assets/logo.png'
@@ -11,7 +11,14 @@ import { WALLET_PATH, BUY_COSMOLAND_PATH } from './../../consts';
 
 const Header = (props) => {
     const navigate = useNavigate()
-    const isConnected = metamaskStore.isConnected && metamaskStore.isChainMatic
+    const [isOpen, setOpen] = useState(false)
+    const openClasses = isOpen ? css.open: null
+    const isConnected = metamaskStore.isConnected
+    const chainMatic = metamaskStore.isChainMatic
+
+    const openMenu = () => {
+        setOpen(open => !open)
+    }
 
     return (
         <header className={css.header}>
@@ -21,18 +28,26 @@ const Header = (props) => {
                         <img src={logo} onClick={() => scrollTop(() => navigate('/'))} className={css.logoImage} />
                     </div>
                     <nav className={css.nav}>
-                        {isConnected ? 
+                        {isConnected && chainMatic ? 
                         <>
+                        <div className={css.navInner + " " + openClasses}>
                             <div className={css.navLink}>
                                 <span className={css.groupName} onClick={() => scrollTop(() => navigate(DASHBOARD_PATH))}>Dashboard</span>
                             </div>
                             <div className={css.navLink}>
-                                <span className={css.groupName} onClick={() => scrollTop(() => navigate(BUY_COSMOLAND_PATH))}>Buy Cosmoland</span>
+                                <span className={css.groupName}>CosmoLand NFT</span>
                                 <ul className={css.dropdown}>
                                     <li>
                                         <span className={css.listText}>
                                             <strong onClick={() => scrollTop(() => navigate(ABOUT_COSMOLANDS_PATH))}>
                                                 About CosmoLands
+                                            </strong>
+                                        </span>
+                                    </li>
+                                    <li>
+                                        <span className={css.listText}>
+                                            <strong onClick={() => scrollTop(() => navigate(BUY_COSMOLAND_PATH))}>
+                                                Buy CosmoLand
                                             </strong>
                                         </span>
                                     </li>
@@ -44,8 +59,24 @@ const Header = (props) => {
                             <div className={css.navLink} onClick={() => scrollTop(() => navigate(WALLET_PATH))}>
                                 <span className={css.groupName}>Wallet</span>
                             </div>
+                        </div>
+
+                            <div className={css.navLink + " " + css.navbarMobile} onClick={openMenu}>
+                                <div></div>
+                            </div>
                         </>:
-                        <Button isFilled={true} onClick={metamaskStore.connect_to_metamask}>connect metamask</Button>
+                        <>
+                            {!isConnected || !chainMatic ? 
+                                <Button data-aos="zoom-in" isFilled={true} 
+                                        onClick={!isConnected ? () => metamaskStore.connect_to_metamask():
+                                                                              () => metamaskStore.switchChain()}>
+                                    {!isConnected ? 'Connect metamask': 'Switch chain'}
+                                </Button>
+                                :
+                                <Button data-aos="zoom-in" isFilled={true}
+                                        onClick={() => metamaskStore.switchChain()}>Switch chain</Button>
+                            }
+                        </>
                         }
                     </nav>
                 </div>
