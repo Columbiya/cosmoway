@@ -15,9 +15,42 @@
     align-items: center;
 
     margin-bottom: 25px;
+
+    position: relative;
 }
 
 .title {
     font-size: 60px;
     @include colorTextWithGradient(54deg, $startColorGradient, $endColorGradient);
+}
+
+.sliderIndex {
+    display: none;
+}
+
+@media screen and (max-width: 400px) {
+
+}
+
+@media screen and (max-width: 800px) {
+    .sliderIndex {
+        display: block;
+    }
+
+    .news {
+        position: relative;
+
+        padding-bottom: 100px;
+    }
+
+    .header {
+        position: static;
+        a {
+            position: absolute;
+
+            top: 90%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
 }

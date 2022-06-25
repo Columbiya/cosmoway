@@ -95,7 +95,6 @@
 .planName {
     font-size: 31px;
     font-weight: 900;
-    letter-spacing: 3px;
     margin-bottom: 55px;
 }
 
@@ -132,7 +131,6 @@
 
     font-size: 22px;
     font-weight: 900;
-    letter-spacing: 2px;
 }
 
 .text {
@@ -175,9 +173,10 @@
             transition: transform .3s ease-in-out;
 
             &:nth-child(1) {
+                z-index: 10;
                 &:hover {
-                    transform: translateY(-80%);
-                }    
+                    transform: translateY(-70%);
+                }
             }
 
             &:nth-child(2) {
@@ -185,7 +184,7 @@
                 transform: translateY(-70%);
 
                 &:hover {
-                    transform: translateY(-165%);
+                    transform: translateY(-140%);
                 }
             }
 
@@ -194,7 +193,7 @@
                 transform: translateY(-140%);
 
                 &:hover {
-                    transform: translateY(-250%);
+                    transform: translateY(-210%);
                 }
             }
 
@@ -227,6 +226,5 @@
 
     .planName {
         font-size: 27px;
-        letter-spacing: 1px;
     }
 }

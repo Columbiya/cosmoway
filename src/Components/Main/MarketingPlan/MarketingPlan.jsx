@@ -15,7 +15,7 @@ const MarketingPlan = (props) => {
                     <h2 className={css.title} data-aos="fade-up"><span className='mark'>Marketing</span> Plan</h2>
                     <h3 className={css.subtitle} data-aos="fade-down">when Collecting NFTs</h3>
                     <div className={css.plans}>
-                        <div className={css.planItem + ' ' + css.bronze} data-aos="fade-up">
+                        <div className={css.planItem + ' ' + css.bronze}>
                             <img src={bronzeIcon} className={css.icon} alt="" />
                             <h3 className={css.planName}>Bronze Level</h3>
                             <div className={css.scheme}>
@@ -28,7 +28,7 @@ const MarketingPlan = (props) => {
                             </div>
                         </div>
 
-                        <div className={css.planItem + ' ' + css.silver} data-aos="zoom-out">
+                        <div className={css.planItem + ' ' + css.silver}>
                             <img src={silverIcon} className={css.icon} alt="" />
                             <h3 className={css.planName}>Silver Level</h3>
                             <div className={css.scheme}>
@@ -41,7 +41,7 @@ const MarketingPlan = (props) => {
                             </div>
                         </div>
 
-                        <div className={css.planItem + ' ' + css.golden} data-aos="zoom-in">
+                        <div className={css.planItem + ' ' + css.golden}>
                             <img src={goldenIcon} className={css.icon} alt="" />
                             <h3 className={css.planName}>Golden Level</h3>
                             <div className={css.scheme}>
@@ -54,7 +54,7 @@ const MarketingPlan = (props) => {
                             </div>
                         </div>
 
-                        <div className={css.planItem + ' ' + css.platinum} data-aos="fade-down">
+                        <div className={css.planItem + ' ' + css.platinum}>
                             <img src={platinumIcon} className={css.icon} alt="" />
                             <h3 className={css.planName}>Platinum Level</h3>
                             <div className={css.scheme}>

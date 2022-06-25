@@ -38,6 +38,7 @@
     margin-right: 30px;
 
     position: relative;
+    z-index: 500;
 
     display: flex;
     align-items: center;
@@ -64,6 +65,7 @@
     top: 105%;
     left: 0;
     right: 0;
+    z-index: 1000;
 
     span {
         display: block;
@@ -325,7 +327,7 @@
 .treeFirstRowImage {
     position: absolute;
     bottom: 100%;
-    left: 50%;
+    left: 781px;
     transform: translateX(-50%);
     z-index: 50;
 }
@@ -412,6 +414,10 @@
     &.mobileButtons {
         display: none;
     }
+
+    button {
+        width: 210px;
+    }
 }
 
 .width360 {
@@ -433,6 +439,7 @@
     align-items: center;
 
     position: relative;
+    margin: 0 auto;
 
     span {
         padding: 0 45px;
@@ -454,7 +461,7 @@
         position: absolute;
         top: 0;
         left: 0;
-        background: $blueColor;
+        background: #20aff0;
         border-radius: 30px;
 
         transition: transform .3s ease;
@@ -485,4 +492,180 @@
 
 .newsContainer {
     margin-top: 75px;
+}
+
+@media screen and (max-width: 1550px) {
+    .info {
+        flex-direction: column;
+        align-items: center;
+
+        .team {
+            width: 60%;
+            &:nth-child(2) {
+                order: 3;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+    .referralTree {
+        overflow-x: scroll;
+    }
+}
+
+
+@media screen and (max-width: 1500px) {
+    .buttons {
+        flex-direction: column;
+    }
+
+    .buttonsNav {
+        margin-top: 25px;
+        align-self: flex-end;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .treeToggle {
+        display: flex;
+    }
+
+    .treeFirstRowImage {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .buttonsNav {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        button {
+            width: 80%;
+            &:not(:last-child) {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+        }
+    }
+
+    .buttonsLeft {
+        flex-direction: column;
+    }
+
+    .copyLink {
+        margin-top: 25px;
+        font-size: 20px;
+    }
+
+    .dropDown {
+        width: 80%;
+        margin-right: 0;
+    }
+
+    .title {
+        display: none;
+    }
+
+    .info {
+        .team {
+            width: 100%;
+            height: 350px;
+
+            &:not(:last-child) {
+                margin-bottom: 70px;
+            }
+
+            &:nth-child(2) {
+                height: auto;
+            }
+        }
+    }
+
+    .footerInfo {
+        padding: 30px;
+        height: auto;
+    }
+
+    .teamValue {
+        padding: 30px;
+
+        span {
+            &:last-child {
+                font-size: 28px;
+                margin-top: 10px;
+            }
+        }
+    }
+
+    .teamHeader {
+        justify-content: space-between;
+    }
+
+    .teamKind {
+        margin-left: 0;
+        width: 170px;
+        height: 50px;
+        padding: 0;
+
+        display: grid;
+        place-items: center;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .copyLink {
+        position: relative;
+        padding-bottom: 40px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .referralLink {
+        display: block;
+        width: 100%;
+        word-wrap: break-word;
+    }
+
+    .copyImg {
+        margin-left: 0;
+
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .dropDown {
+        width: 100%;
+    }
+
+    .buttonsNav {
+        button {
+            width: 100%;
+        }
+    }
+
+    .team {
+        &:nth-child(2) {
+
+            .teamInfoItem {
+                width: 100%;
+                flex-direction: column;
+
+                span {
+                    display: block; 
+                    width: 100%;
+                }
+
+                span.mark {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
 }

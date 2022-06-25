@@ -9,7 +9,7 @@ const Join = (props) => {
         <div className={css.join}>
             <div className="container">
                 <div className={css.joinContainer} data-aos="fade">
-                    <h2 className={css.title + " " + css.circle}><span>Join</span><br />the Discussion</h2>
+                    <h2 className={css.title + " " + css.circle}><span>Join</span>the Discussion</h2>
                     <div className={css.medias}>
                         <a className={css.media + " " + css.circle} target="__blank" href="https://twitter.com/CosmoFund">
                             <img src={twitter} alt='twitter' />

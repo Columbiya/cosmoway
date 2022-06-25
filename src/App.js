@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import './App.scss';
 import Header from './Components/Header/Header';
 import Main from './Components/Main/Main'
@@ -13,6 +13,8 @@ import { YMInitializer } from 'react-yandex-metrika';
 import AOS from 'aos';
 import 'aos/dist/aos.css'
 import Cosmolands from './Components/Cosmolands/Cosmolands';
+import { observer } from 'mobx-react-lite';
+import WithRedirect from './helpers/WithRedirect';
 
 const App = (props) => {
 
@@ -30,16 +32,17 @@ const App = (props) => {
     AOS.refresh()
   }, [])
 
+
   return (
     <div className='overflow-hidden'>
       <YMInitializer accounts={[89156244]} options={{webvisor: true, accurateTrackBounce: true, trackLinks: true, clickmap: true}} />
       <Header />
       <Routes>
-        <Route path={WALLET_PATH} element={<Wallet />} />
-        <Route path={REFERAL_TREE_PATH} element={<ReferalTree />} />
-        <Route path={DASHBOARD_PATH} element={<Dashboard />} />
-        <Route path={BUY_COSMOLAND_PATH} element={<BuyCosmoland />} />
-        <Route path={ABOUT_COSMOLANDS_PATH} element={<Cosmolands />} />
+        <Route path={WALLET_PATH} element={<WithRedirect><Wallet /></WithRedirect>} />
+        <Route path={REFERAL_TREE_PATH} element={<WithRedirect><ReferalTree /></WithRedirect>} />
+        <Route path={DASHBOARD_PATH} element={<WithRedirect><Dashboard /></WithRedirect>} />
+        <Route path={BUY_COSMOLAND_PATH} element={<WithRedirect><BuyCosmoland /></WithRedirect>} />
+        <Route path={ABOUT_COSMOLANDS_PATH} element={<WithRedirect><Cosmolands /></WithRedirect>} />
         <Route index element={<Main />} />
       </Routes>
     </div>

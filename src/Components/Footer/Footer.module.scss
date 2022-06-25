@@ -25,7 +25,6 @@
     &.twitter {
         background: url('../../assets/index-page/twitter.svg') top center no-repeat;
     }
-
     
     &.discord {
         background: url('../../assets/index-page/discord.svg') top center no-repeat;
@@ -75,4 +74,41 @@
     font-size: 18px;
     text-align: right;
     margin: 90px 0;
+}
+
+@media screen and (max-width: 1200px) {
+    .socialMedia {
+        flex-wrap: wrap;
+    }
+
+    .mediaItem {
+        margin-top: 15px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .inner {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .socialMedia {
+        width: 100%;
+    }
+
+    .nav {
+        text-align: center;
+        width: 100%;
+        margin-top: 75px;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .mediaItem:last-child {
+        margin: 15px auto 0;
+    }
 }

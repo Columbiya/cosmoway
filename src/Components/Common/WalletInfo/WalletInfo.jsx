@@ -10,7 +10,7 @@ const WalletInfo = ({ crumb }) => {
     
     return (
         <>
-            <section className={css.wallet} data-aos="fade-up">
+            <>
                 <div className="container">
                     <div className={css.walletInner} data-aos="zoom-out">
                         <BreadCrumbs crumb={crumb} />
@@ -20,7 +20,7 @@ const WalletInfo = ({ crumb }) => {
                         </div>
                     </div>
                 </div>
-            </section>
+            </>
         </>
     )
 }

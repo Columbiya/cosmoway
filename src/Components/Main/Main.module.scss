@@ -1,3 +1,9 @@
 .snippetContainer {
     margin-bottom: 150px;
 }
+
+@media screen and (max-width: 1600px) {
+    .snippetContainer {
+        margin-top: -1300px;
+    }
+}

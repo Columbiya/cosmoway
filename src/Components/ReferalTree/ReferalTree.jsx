@@ -13,7 +13,6 @@ import bronzeIcon from '../../assets/bronze-icon.png'
 import platinumIcon from '../../assets/platinum-icon.png'
 import copyImg from '../../assets/referral-tree/link-icon.png'
 import goldIcon from '../../assets/referral-tree/gold-icon.png'
-import BreadCrumbs from '../BreadCrumbs/BreadCrumbs'
 import Footer from '../Footer/Footer'
 import News from '../Main/News/News'
 import Preloader from '../Preloader/Preloader'
@@ -21,14 +20,13 @@ import Feedback from '../Main/Feedback/Feedback'
 import newsStore from '../../store/newsStore'
 import WalletInfo from '../common/WalletInfo/WalletInfo'
 
+const teams = ['Left Team', 'Right Team'];
+
 const ReferalTree = () => {
-    const teams = ['Left Team', 'Right Team'];
     let [isHidden, setIsHidden] = useState(true)
     let [active, setActive] = useState(teams[0])
     let [isRight, setIsRight] = useState(false)
     const [isLoading, setLoading] = useState(true)
-    const [youOwn, setYouOwn] = useState(0)
-    const [wallet, setWallet] = useState('')
 
     let ref = useRef(null)
     const rightTeam = useRef(null)
@@ -61,8 +59,10 @@ const ReferalTree = () => {
             tree.current.scrollLeft = rightTeam.current.offsetLeft - window.innerWidth / 2 + rightTeam.current.clientHeight / 2;
         }
         else {
-            tree.current.scrollLeft = leftTeam.current.offsetLeft - window.innerWidth / 2 + leftTeam.current.clientHeight / 2;;
+            tree.current.scrollLeft = leftTeam.current.offsetLeft - window.innerWidth / 2 + leftTeam.current.clientHeight / 2;
         }
+
+        console.log(rightTeam.current.offsetLeft - window.innerWidth / 2 + rightTeam.current.clientHeight / 2)
 
         setIsRight(!isRight)
     }
@@ -103,9 +103,9 @@ const ReferalTree = () => {
                                 </div>
                             </div>
                             <div className={css.buttonsNav} data-aos="zoom-out">
-                                <Button style={{ padding: "23px 50px", width: "auto" }} isFilled={true}>to my account</Button>
-                                <Button style={{ padding: "23px 50px", width: "auto" }} isFilled={true}>one level up</Button>
-                                <Button style={{ padding: "23px 50px", width: "auto" }} isFilled={true}>refresh</Button>
+                                <Button isFilled={true}>to my account</Button>
+                                <Button isFilled={true}>one level up</Button>
+                                <Button isFilled={true}>refresh</Button>
                             </div>
                         </div>
                         <div className={css.info}>

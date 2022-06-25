@@ -1,12 +1,10 @@
 
-.wallet {
-    margin-bottom: 25px;
-}
-
 .walletInner {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 25px;
 }
 
 .walletInfo {
@@ -14,7 +12,9 @@
 
     p {
         font-size: 21px;
-        margin-right: 80px;
+        &:not(:last-child) {
+            margin-right: 40px;
+        }
     }
 }
 

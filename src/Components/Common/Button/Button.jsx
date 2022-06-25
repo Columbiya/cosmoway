@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import css from './Button.module.scss'
 
-const Button = ({ children, isFilled, isColorBlack, soon, animatedGradient, href, boxShadowOnHover, text, ...props}) => {
+const Button = ({ children, isFilled, isColorBlack, soon, animatedGradient, href, boxShadowOnHover, text, className, ...props}) => {
     const [isOver, setOver] = useState(false)
 
     const classes = isFilled ? css.filled: css.hollow
@@ -14,14 +14,14 @@ const Button = ({ children, isFilled, isColorBlack, soon, animatedGradient, href
     return (
         <>
             {!href ? 
-                <button className={css.button + " " + classes + " " + colorClass + " " + animated + " " + boxShadowHover} 
+                <button className={css.button + " " + classes + " " + colorClass + " " + animated + " " + boxShadowHover + " " + className} 
                         onMouseEnter={soon ? () => setOver(true): null}
                         onMouseLeave={soon ? () => setOver(false): null}
                     {...props}>
                     {content}
                 </button> :
                 <a href={href}
-                   className={css.button + " " + classes + " " + colorClass + " " + animated + " " + boxShadowHover}
+                   className={css.button + " " + classes + " " + colorClass + " " + animated + " " + boxShadowHover + " " + className}
                    target="__blank"
                    onMouseEnter={soon ? () => setOver(true): null}
                    onMouseLeave={soon ? () => setOver(false): null}

@@ -167,3 +167,9 @@ textarea.input {
 .error {
     width: 80%;
 }
+
+@media screen and (max-width: 992px) {
+    .popup.bonus {
+        padding: 0 25px;
+    }
+}

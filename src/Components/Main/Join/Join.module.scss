@@ -9,6 +9,7 @@
     font-size: 36px;
     span {
         font-size: 60px;
+        display: block;
         @include colorTextWithGradient(54deg, $startColorGradient, $endColorGradient);
     }
 }
@@ -66,5 +67,57 @@
     img {
         width: 40px;
         margin-right: 30px;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+
+    .joinContainer {
+        flex-direction: column;
+        padding-top: 0;
+        border-top: 0;
+        padding-left: 25px;
+        border-left: 1px solid #29bbed;
+    }
+
+    .join {
+        margin: 75px;
+    }
+
+    .medias {
+        flex-direction: column;
+    }
+
+    .circle {
+        &::after {
+            top: 0;
+            left: -34px;
+        }
+    }
+
+    .title {
+        margin-bottom: 25px;
+        width: 100%;
+    }
+
+    .media {
+        &:not(:last-child) {
+            margin-bottom: 25px;
+        }
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    .title {
+        font-size: 30px;
+
+        span {
+            font-size: 36px;
+        }
+    }
+
+    .join {
+        margin: 50px 0;
     }
 }

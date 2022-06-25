@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import mainScreenImage from '../../assets/Cosmolands/main-screen-image.png'
 import pricingImage from '../../assets/Cosmolands/pricing-image.jpg'
-import logo from '../../assets/logo.png'
+import pricingImageMobile from '../../assets/Cosmolands/pricing-image-mobile.jpg'
 import css from './Cosmolands.module.scss'
 import BreadCrumbs from './../BreadCrumbs/BreadCrumbs';
 import Button from './../common/Button/Button';
@@ -14,7 +14,7 @@ import newsStore from '../../store/newsStore'
 import Preloader from '../Preloader/Preloader'
 import { useNavigate } from 'react-router-dom';
 import { scrollTop } from '../../scrollTop'
-import { ABOUT_CVR_PATH, BUY_COSMOLAND_PATH } from '../../consts'
+import { BUY_COSMOLAND_PATH } from '../../consts'
 import Snippet from './../common/Snippet/Snippet';
 
 const Cosmolands = (props) => {
@@ -55,10 +55,11 @@ const Cosmolands = (props) => {
                             </strong></p>
                         </div>
                         <Button isFilled={true} style={{width: '300px', height: '100px', fontSize: '26px'}} 
+                                className={css.buyCosmolandBtn}
                                 animatedGradient={true}
                                 data-aos="fade-down"
                                 onClick={() => scrollTop(() => navigate(BUY_COSMOLAND_PATH))}>buy cosmoland</Button>
-                        <img src={mainScreenImage} data-aos="fade-down" className={css.mainScreenImage} alt="" />
+                        <img src={mainScreenImage} className={css.mainScreenImage} alt="" />
                     </div>
                 </div>
             </section>
@@ -83,7 +84,7 @@ const Cosmolands = (props) => {
             <section className={css.consistsOf} data-aos="fade-down">
                 <div className="container">
                     <div className={css.consistsInner}>
-                        <p className={css.consistsText} data-aos="fade-down">CosmoLand consists of <br /><span>16,400,000</span><br />collectible digital images with a unique title of
+                        <p className={css.consistsText} data-aos="fade-down">CosmoLand consists of <br /><span>16,400,000</span>collectible digital images with a unique title of
                         ownership - that is NFT.</p>
                     </div>
                 </div>
@@ -142,7 +143,10 @@ const Cosmolands = (props) => {
                     <h2 className={css.title} data-aos="zoom-out"><span>pricing</span></h2>
                     <p className={css.pricingText} data-aos="zoom-out">We offer the most affordable NFTs that give 
                     ownership of virtual lands in the metaverse</p>
-                    <img src={pricingImage} data-aos="zoom-in" className={css.pricingImage} alt="" />
+                    <div className={css.pricingImagesContainer}>
+                        <img src={pricingImage} data-aos="zoom-in" className={css.pricingImage} alt="" />
+                        <img src={pricingImageMobile} data-aos="zoom-in" className={css.pricingImage + " " + css.mobile} alt="" />
+                    </div>
                     <div className={css.table} data-aos="fade-down">
                         <div className={css.tableRow} data-aos="zoom-in">
                             <span>FROM</span>

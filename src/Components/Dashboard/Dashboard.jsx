@@ -7,6 +7,7 @@ import Button from '../common/Button/Button'
 import News from '../Main/News/News'
 import Feedback from '../Main/Feedback/Feedback'
 import cvrBirds from '../../assets/dashboard/early-birds-image.png'
+import cvrBirdsMobile from '../../assets/dashboard/early-birds-image-mobile.png'
 import newsStore from '../../store/newsStore'
 import Preloader from '../Preloader/Preloader'
 import Popup from '../common/Popups/Popup'
@@ -103,7 +104,7 @@ const Dashboard = () => {
                                     </div>
                                     <div className={css.btnContainer}>
                                         <Button isFilled={true} style={{ background: "#fff", color: "#000" }}
-                                                onClick={() => scrollTop(() => navigate(WALLET_PATH))}>claim</Button>
+                                                onClick={() => scrollTop(() => navigate(WALLET_PATH))} className={css.claimBtn}>claim</Button>
                                         <div className={css.warning} onClick={openWarning}>
                                             i
                                         </div>
@@ -159,12 +160,14 @@ const Dashboard = () => {
                     <div className="container">
                         <div className={css.birdsInner}>
                             <img src={cvrBirds} className={css.birdsImage} alt="" />
+                            <img src={cvrBirdsMobile} className={css.birdsImage + " " + css.mobile} alt="" />
                             <div className={css.birdsContent}>
                                 <h3 className={css.birdsTitle}>early birds bonus</h3>
                                 <p className={css.birdsText}>You will be able to claim the bonus after the close of the 10th stage of the CVR token sale</p>
                                 <div className={css.btns}>
                                     <Button isFilled={true} style={{ background: "#fff", color: "#000" }}>claim</Button>
-                                    <Button isFilled={true} style={{ background: "transparent", border: "1px solid #fff" }}>about cvr</Button>
+                                    <Button isFilled={true} style={{ background: "transparent", border: "1px solid #fff" }}
+                                            href="https://metacosmo.space/about-cvr">about cvr</Button>
                                 </div>
                             </div>
                         </div>

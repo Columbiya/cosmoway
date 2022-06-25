@@ -35,3 +35,29 @@
         color: #000;
     }
 }
+
+@media screen and (max-width: 1200px) {
+    .warning {
+        width: 100%;
+        padding: 0 0 0 100px;
+
+        &::before {
+            left: 0;
+            top: 50%;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .warning {
+        padding: 100px 0 0;
+        font-size: 16px;
+        text-align: center;
+
+        &::before {
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+        }
+    }
+}

@@ -55,7 +55,6 @@
     border: none;
     outline: none;
     padding: 15px;
-    width: 630px;
     border-bottom: 1px solid #000;
     font-family: 'Open Sans', sans-serif;
     font-size: 24px;
@@ -71,4 +70,43 @@
 
 .marginBtm {
     margin-bottom: 25px;
+}
+
+@media screen and (max-width: 1450px) {
+    .title {
+        font-size: 36px;
+    }
+
+    .inner {
+        column-gap: 55px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .feedback {
+        margin: 60px 0 130px;
+    }
+    
+    .inner {
+        flex-direction: column;
+        padding-top: 0;
+        padding-left: 55px;
+        border-top: none;
+        border-left: 1px solid #096db1;
+    }
+
+    .item {
+        &:nth-child(n) {
+            width: 100%;
+        }
+
+        &::after {
+            left: -65px;
+            top: 0;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 25px;
+        }
+    }
 }

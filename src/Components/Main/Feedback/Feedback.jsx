@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Button from '../../common/Button/Button'
 import css from './Feedback.module.scss'
 import { useNavigate } from 'react-router-dom';
-import { scrollTop } from './../../../scrollTop';
 import { axios } from './../../../http/http';
 import Popup from './../../common/Popups/Popup';
 

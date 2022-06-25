@@ -166,9 +166,6 @@
     text-align: center;
     margin: 110px 0;
 
-    .nftsLink:first-child {
-        margin-right: 40px;
-    }
 }
 
 .wallets {
@@ -181,5 +178,44 @@
         display: block;
         text-decoration: underline;
         color: #000;
+        overflow-x: scroll;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .buy {
+        flex-direction: column;
+    }
+
+    .nftsInput {
+        margin-bottom: 25px;
+    }
+
+    .buyLimitations {
+        margin-bottom: 25px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .nftsHeader {
+        flex-direction: column;
+    }
+
+    .nftsInfoItem {
+        &:not(:last-child) {
+            margin-bottom: 25px;
+        }
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .nftsInfoItem {
+        font-size: 24px;
+
+        padding: 25px 0 25px 50px;
+    }
+
+    .nftsInput {
+        width: 100%;
     }
 }

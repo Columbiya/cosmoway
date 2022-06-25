@@ -10,8 +10,6 @@ import Footer from '../Footer/Footer'
 import WalletInfo from './../common/WalletInfo/WalletInfo';
 
 const Wallet = (props) => {
-    const [youOwn, setYouOwn] = useState(0)
-    const [wallet, setWallet] = useState('')
     const [isLoading, setLoading] = useState(true)
 
     useEffect(() => {
@@ -38,7 +36,7 @@ const Wallet = (props) => {
                             <div className={css.walletItem} data-aos="fade-up">
                                 <header className={css.itemHeader} data-aos="zoom-out">
                                     <h3 className={css.itemTitle}>Vouchers</h3>
-                                    <Button isFilled={true}>claim</Button>
+                                    <Button isFilled={true} className={css.claimBtn}>claim</Button>
                                 </header>
                                 <footer className={css.itemFooter}>
                                     <span>№</span>
@@ -66,11 +64,12 @@ const Wallet = (props) => {
                                     <span>26/06/2022</span>
                                     <span>1,000,123,00</span>
                                 </footer>
+                                <Button isFilled={true} className={css.claimBtn + " " + css.mobile}>claim</Button>
                             </div>
                             <div className={css.walletItem + " " + css.statistics} data-aos="fade-down">
                                 <header className={css.itemHeader} data-aos="zoom-out">
                                     <h3 className={css.itemTitle}>Transactions</h3>
-                                    <Button isFilled={true} style={{opacity: '0', cursor: 'initial'}}>claim</Button>
+                                    <Button isFilled={true} style={{opacity: '0', cursor: 'initial'}} className={css.claimBtn}>claim</Button>
                                 </header>
                                 <footer className={css.itemFooter}>
                                     <span>№</span>
