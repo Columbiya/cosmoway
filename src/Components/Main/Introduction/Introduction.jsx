@@ -25,11 +25,16 @@ const Introduction = (props) => {
                                 <Button data-aos="zoom-in" isFilled={true} 
                                         onClick={() => metamaskStore.connect_to_metamask()}>connect metamask</Button>
                                 :
-                                <Button data-aos="zoom-in" isFilled={true}
-                                        onClick={() => metamaskStore.switchChain()}>Switch chain</Button>
+                                <>
+                                    <Button data-aos="zoom-in" isFilled={true}
+                                            onClick={() => metamaskStore.switchChain()}>Switch chain</Button>
+                                </>
                             }
                             <span>Connect for login/register</span>
                         </div>
+                        {!isChainMatic && connected &&
+                            <span className={css.subtext + " " + css.instructions}><a href="https://cosmofund.medium.com/connecting-metamask-to-matic-mainnet-d25d9024b180" target="__blank">Polygon setup instructions</a></span>
+                        }
                         <span className={css.subtext}>You can <a href="#">download metamask here</a></span>
                     </>:
                     <>

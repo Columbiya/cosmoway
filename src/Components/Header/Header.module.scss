@@ -290,7 +290,18 @@
     }
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 768px) {
+    .nav {
+        button {
+            width: 120px;
+            height: 45px;
+            margin-left: 10px;
+            font-size: 12px;
+        }
+    }
+}
+
+@media screen and (max-width: 430px) {
     .logo {
         width: 220px;
 

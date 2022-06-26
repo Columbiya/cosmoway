@@ -720,6 +720,9 @@ $titlesWithNoLinesMargin: 130px;
         }
 
         &.bonus {
+            .columnTitle {
+                margin-bottom: 98px;
+            }
             span {
                 &:not(:last-child) {
                     margin-bottom: 25px;
@@ -732,7 +735,16 @@ $titlesWithNoLinesMargin: 130px;
         width: 1000px;
     }
 
+    .popup {
+        .lines {
+            font-size: 19px;
+        }
+    }
+
     .lines {
+        padding: 8px 15px;
+        text-align: center;
+
         span {
             &:not(:last-child) {
                 margin-bottom: 0;
@@ -749,13 +761,14 @@ $titlesWithNoLinesMargin: 130px;
     }
 
     .rankTeamTableAdditional {
-        right: -165px;
+        right: -350px;
         top: 222px;
         padding: 62px;
     }
 
     .teamBonusImage {
         bottom: 50px;
+        right: -120px;
     }
 
     .earlyWrapper {

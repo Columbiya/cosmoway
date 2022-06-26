@@ -242,8 +242,8 @@ class Metamask {
                         params: [ !Object.keys(params).length ?
                         {
                             chainId: "0x89",
-                            rpcUrls: ["https://rpc-mainnet.matic.network/"],
-                            chainName: "Matic Mainnet",
+                            rpcUrls: ["https://polygon-rpc.com/"],
+                            chainName: "Polygon (Matic Mainnet)",
                             nativeCurrency: {
                                 name: "MATIC",
                                 symbol: "MATIC",

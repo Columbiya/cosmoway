@@ -115,6 +115,10 @@
     font-size: 25px;
 }
 
+.instructions {
+    display: none;
+}
+
 @keyframes fadeUp {
     0% {
         transform: scale(0);
@@ -191,6 +195,10 @@
     .mainHeaderContainer {
         margin-left: 0;
         max-width: 100%;
+    }
+
+    .instructions {
+        display: block;
     }
 }
 

@@ -60,7 +60,11 @@ const Popup = ({ errorText, onHide, amount, isSubscribe, bonus: Bonus }) => {
                     </div>
                 }
 
-                {Bonus && <Bonus />}
+                {Bonus && 
+                <>
+                    <Bonus />
+                    <div className={css.close} onClick={onHide}>x</div>
+                </>}
 
                 {isSubscribe &&
                     <Form onSubmit={onDevSubmit} render={({ handleSubmit, form, submitting }) => (

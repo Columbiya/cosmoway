@@ -282,6 +282,32 @@
     .popup .innerBinary {
         width: 100%;
     }
+
+    .popupTitle {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .bonusTitle {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .popup .tableTitle {
+        margin-bottom: 70px;
+    }
+
+    .table {
+        padding: 30px 30px 100px;
+    }
+
+    .binaryImage {
+        right: -150px;
+    }
+
+    .popup .tableDirectImage {
+        top: 500px;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -293,20 +319,22 @@
         font-size: 22px;
     }
 
-    .typeItem {
+    .typeItem, .popup .typeItem {
         font-size: 16px;
 
+        padding: 25px 0 25px 70px;
+
         &:not(:last-child) {
-            margin-bottom: 20px;
+            margin-bottom: 8px;
         }
     }
 
     .table {
-        min-width: 1100px;
-        width: 1100px; 
+        min-width: 1000px;
+        width: 1000px; 
     }
 
-    .row {
+    .popup .row, .row {
         span {
             font-size: 16px;
         }
@@ -320,6 +348,10 @@
         &:not(:last-child) {
             margin-right: 46px;
         }
+    }
+
+    .popupTitle {
+        margin-top: 50px;
     }
 }
 
